@@ -191,7 +191,7 @@ g.nodes.push({
   y: 0.1,
   size: 1,
   color: '#e41a1c',
-  //url: "https://www.imdb.com/title/tt13364390/"
+  //url: "https://www.imdb.com/title/tt13364390/",
   url: './tatort_zuerich_highlighted.png'
 });
 
@@ -270,7 +270,8 @@ g.edges.push({
   source: "vf",
   target: "tatort",
   size: 1,
-  color: '#666'
+  color: '#666',
+  url: './tatort_zuerich_highlighted.png'
 });
 
 g.edges.push({
@@ -323,8 +324,11 @@ s.settings('labelThreshold', 0);
 
 s.bind('clickNode',
   function(e) {
-    window.open(e.data.node.url, "_blank");
+  	if ( e.data.node.url != undefined ) {
+  		window.open(e.data.node.url, "_blank");
+  	}
   });
+
 
 s.refresh()
 
