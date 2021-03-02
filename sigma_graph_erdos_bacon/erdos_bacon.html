@@ -314,10 +314,71 @@ g.edges.push({
   color: '#666'
 });
 
+
+// people edges
+
+g.edges.push({
+  id: "ep1",
+  source: "mr",
+  target: "kb",
+  size: 5,
+  color: '#377eb8',
+  type: 'curve'
+});
+
+g.edges.push({
+  id: "ep2",
+  source: "mr",
+  target: "cs",
+  size: 5,
+  color: '#377eb8',
+  type: 'curve'
+});
+
+g.edges.push({
+  id: "ep3",
+  source: "vf",
+  target: "cs",
+  size: 5,
+  color: '#377eb8',
+  type: 'curve'
+});
+
+g.edges.push({
+  id: "ep4",
+  source: "vf",
+  target: "gr",
+  size: 5,
+  color: '#377eb8',
+  type: 'curve'
+});
+
+g.edges.push({
+  id: "ep5",
+  source: "aj",
+  target: "gr",
+  size: 5,
+  color: '#377eb8',
+  type: 'curve'
+});
+
+g.edges.push({
+  id: "ep6",
+  source: "aj",
+  target: "pe",
+  size: 5,
+  color: '#377eb8',
+  type: 'curve'
+});
+
 // Instantiate sigma:
 s = new sigma({
   graph: g,
-  container: 'graph-container'
+  //container: 'graph-container'
+  renderer: {
+    container: document.getElementById('graph-container'),
+    type: 'canvas'
+  }
 });
 
 s.settings('labelThreshold', 0);
